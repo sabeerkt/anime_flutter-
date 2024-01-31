@@ -1,12 +1,16 @@
 import 'package:anima/constant/data.dart';
 import 'package:anima/view/det.dart';
-import 'package:anima/view/iconanim.dart';
-import 'package:anima/view/sandbox.dart';
-import 'package:anima/view/screentittle.dart';
-import 'package:anima/view/textslide.dart';
-import 'package:anima/view/ticker.dart';
+import 'package:anima/widget/conopacty.dart';
+import 'package:anima/widget/iconanim.dart';
+import 'package:anima/widget/opcity.dart';
+import 'package:anima/widget/physiczl.dart';
+import 'package:anima/widget/sandbox.dart';
+import 'package:anima/widget/textslide.dart';
+import 'package:anima/widget/ticker.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+
+// Import your other view classes here
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key});
@@ -31,7 +35,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        
+      ),
       body: Column(
         children: [
           Expanded(
@@ -114,49 +120,90 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
           ),
-          Row(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return Slide();
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return Slide();
+                        },
+                      ));
                     },
-                  ));
-                },
-                child: Text("Slide"),
-              ),
-               ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return Sandbox();
+                    child: Text("Slide"),
+                  ),
+                  SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return Sandbox();
+                        },
+                      ));
                     },
-                  ));
-                },
-                child: Text("sanbox"),
-              ),
-               ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return TickerPro();
+                    child: Text("Sandbox"),
+                  ),
+                  SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return TickerPro();
+                        },
+                      ));
                     },
-                  ));
-                },
-                child: Text("TickerPro"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return IconAnim();
+                    child: Text("TickerPro"),
+                  ),
+                  SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return IconAnim();
+                        },
+                      ));
                     },
-                  ));
-                },
-                child: Text("IconAnim"),
+                    child: Text("IconAnim"),
+                  ),
+                  SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return OpacityPage();
+                        },
+                      ));
+                    },
+                    child: Text("Opacity"),
+                  ),
+                  SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return Physical();
+                        },
+                      ));
+                    },
+                    child: Text("Physical"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return ConatinerOpac();
+                        },
+                      ));
+                    },
+                    child: Text("ConatinerOpac"),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ],
       ),
