@@ -1,10 +1,15 @@
 import 'package:anima/constant/data.dart';
 import 'package:anima/view/det.dart';
+import 'package:anima/view/iconanim.dart';
+import 'package:anima/view/sandbox.dart';
+import 'package:anima/view/screentittle.dart';
+import 'package:anima/view/textslide.dart';
+import 'package:anima/view/ticker.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -100,7 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       color: const Color.fromARGB(255, 0, 0, 0),
                                     ),
                                   ),
-                                  
                                 ),
                               ],
                             ),
@@ -109,6 +113,50 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     },
                   ),
+          ),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return Slide();
+                    },
+                  ));
+                },
+                child: Text("Slide"),
+              ),
+               ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return Sandbox();
+                    },
+                  ));
+                },
+                child: Text("sanbox"),
+              ),
+               ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return TickerPro();
+                    },
+                  ));
+                },
+                child: Text("TickerPro"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return IconAnim();
+                    },
+                  ));
+                },
+                child: Text("IconAnim"),
+              ),
+            ],
           ),
         ],
       ),

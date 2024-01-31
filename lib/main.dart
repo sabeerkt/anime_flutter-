@@ -1,5 +1,6 @@
 import 'package:anima/view/Home.dart';
 import 'package:anima/view/login.dart';
+import 'package:anima/view/sandbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -39,7 +40,7 @@ class _MyAppState extends State<MyApp> {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: _locale,
-      home: const Login(),
+      home: Login(),
     );
   }
 }
